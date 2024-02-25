@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Media</title>
+</head>
+<body>
+    <h1>Update Media Element</h1>
+    <form action="/update/<%= update._id %>" method="post" enctype="multipart/form-data">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" value="<%= update.username %>" />
+        <br>
+        <label for="avatar">Avatar:</label>
+        <input type="file" id="avatar" name="avatar" />
+        <br>
+        <img src="<%= update.avatar %>" alt="Current Avatar" style="max-width: 200px; max-height: 200px;">
+        <br>
+        <button type="submit">Update</button>
+    </form>
+</body>
+</html>

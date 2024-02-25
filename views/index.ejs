@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>File Upload</title>
+        <link rel="stylesheet" href="/stylesheets/style.css" />
+    </head>
+    <body>
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <input type="text" name="username" />
+            <input type="file" name="avatar" />
+            <button>Upload</button>
+        </form>
+        <hr />
+        <ul>
+            <% medias.forEach(function(m){ %>
+            <li>
+                <h1><%= m.username%></h1>
+                <img src="/images/<%= m.avatar %>" height="200" alt="" />
+                <br />
+                <a href="/delete/<%= m._id%>">Delete</a> 
+                <a href="/update/<%= m._id %>">Update</a>
+            </li>
+
+            <% })%>
+        </ul>
+    </body>
+</html>
